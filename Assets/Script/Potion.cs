@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Posion : MonoBehaviour {
+public class Potion : MonoBehaviour {
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.name == "Player")
