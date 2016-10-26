@@ -7,5 +7,9 @@ public class MagicPotion : Potion {
 	override protected void Start () {
         color = Color.green;
 	}
-	
+    public override void drink (Player player)
+    {
+        base.drink (player);
+        player.GetComponent<BoxCollider> ().isTrigger = true;
+    }
 }
