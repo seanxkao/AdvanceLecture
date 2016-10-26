@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     protected int score;
     protected int vx;
     protected int vy;
+    protected Potion potionOnHand;
 
     void Start() {
         speed = 5f;
@@ -29,6 +30,11 @@ public class Player : MonoBehaviour {
         {
             vy--;
         }
+        if (Input.GetKeyDown (KeyCode.Space)) {
+            if (potionOnHand) {
+                potionOnHand.drink (this);
+            }
+        }
 	}
 
     public void FixedUpdate(){
@@ -42,5 +48,10 @@ public class Player : MonoBehaviour {
         }
     }
 
-
+    public void setPotionOnHand(Potion potion){
+        potionOnHand = potion;
+    }
+    public void setSpeed(float newSpeed) {
+        speed = newSpeed;
+    }
 }

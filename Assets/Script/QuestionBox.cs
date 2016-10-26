@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class QuestionBox : MonoBehaviour {
-    bool isUsed;
-    public GameObject posionP;
+    protected bool isUsed;
+    public GameObject[] potionP;
 
     void Start() {
         isUsed = false;
@@ -12,8 +12,10 @@ public class QuestionBox : MonoBehaviour {
     void OnCollisionEnter(Collision collision) {
         if(!isUsed && collision.gameObject.name == "Player"){
             Vector3 offset = transform.position - collision.gameObject.transform.position;
-            GameObject posion = (GameObject)Instantiate(posionP);
-            posion.transform.position = transform.position + offset;
+            int numPotion = potionP.Length;
+            int idx = Random.Range (0, numPotion);
+            GameObject potion = (GameObject)Instantiate(potionP[idx]);
+            potion.transform.position = transform.position + offset;
             GetComponent<MeshRenderer>().material.color = Color.black;
             isUsed = true;
         }
