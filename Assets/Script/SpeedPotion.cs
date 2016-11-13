@@ -7,4 +7,9 @@ public class SpeedPotion : Potion {
     protected override void Start () {
         color = Color.blue;
 	}
+    public override void drink (Player player)
+    {
+        base.drink (player);
+        player.setSpeed (10.0f);
+    }
 }

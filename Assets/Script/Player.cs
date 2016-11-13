@@ -55,4 +55,7 @@ public class Player : MonoBehaviour {
         }
         potionOnHand = potion;
     }
+    public void setSpeed(float newSpeed) {
+        speed = newSpeed;
+    }
 }
