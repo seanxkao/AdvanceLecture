@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 
     public void addScore() {
         score++;
-        if (score == 10) {
+        if (score == 74) {
             Debug.Log("You win!");
         }
     }

@@ -14,8 +14,8 @@ public class Potion : MonoBehaviour {
         {
             Player player = collider.gameObject.GetComponent<Player>();
             player.GetComponent<MeshRenderer>().material.color = color;
-            player.setPotionOnHand (this);
-            //Destroy(gameObject);
+            player.setPotionOnHand(this);
+            Destroy(gameObject);
         }
     }
 }
